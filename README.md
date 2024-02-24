@@ -120,11 +120,11 @@ c.  <img src = "public/screenshot/15.png">
 
  Untuk File nya berada didalam direktori PWL_2024/POS <br>
 3. a. Halaman Home <br>
-       <img src = "public/screenshot/19.png"> 
+       <img src = "public/screenshot/19.png"> <br>
    b. Halaman Products <br>
-       <img src = "public/screenshot/18.png"> 
+       <img src = "public/screenshot/18.png"> <br>
    c. Halaman User <br>
-       <img src = "public/screenshot/16.png"> 
+       <img src = "public/screenshot/16.png"> <br>
    d. Halaman Penjualan <br>
        <img src = "public/screenshot/17.png"> 
 
