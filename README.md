@@ -39,21 +39,21 @@ echo "Halaman Artikel dengan ID $id";
 
 #### Langkah Langkah Praktikum
 
-b. <img src = "public/screenshot/9.png">
-c. <img src = "public/screenshot/10.png">
+b. <br> <img src = "public/screenshot/9.png"> <br>
+c. <img src = "public/screenshot/10.png"> <br>
 e. <img src = "public/screenshot/11.png">
 
 ### Controller (Membuat Controller)
 
 #### Langkah Langkah Praktikum
 
-e. <img src = "public/screenshot/12.png"> 
+e. <img src = "public/screenshot/12.png"> <br>
 f. class PageController extends Controller
 {
-    public function index ()
-    {
-        return 'Selamat Datang';
-    }
+public function index ()
+{
+return 'Selamat Datang';
+}
 
     public function about()
     {
@@ -70,73 +70,67 @@ f. class PageController extends Controller
 
 };
 
-    Untuk Routingnya 
+    Untuk Routingnya
     Route::get('/', [PageController::class, 'index']);
     Route::get('/about', [PageController::class, 'about']);
     Route::get('/articles{id}', [PageController::class, 'articles']);
 
-g.  Routing nya <br>
-    Route::get('/', [HomeController::class, "index"]); <br>
-    Route::get('/about', [AboutController::class, 'About']); <br>
-    Route::get('/articles{id}', [ArticleController::class, 'articles']);
+g. Routing nya <br>
+Route::get('/', [HomeController::class, "index"]); <br>
+Route::get('/about', [AboutController::class, 'About']); <br>
+Route::get('/articles{id}', [ArticleController::class, 'articles']);
 
-
-
-###  Resource Controller
+### Resource Controller
 
 #### Langkah Langkah Praktikum
 
- <img src = "public/screenshot/13.png"> 
+c. <img src = "public/screenshot/13.png">
 
-
-
-###  View (Membuat View)
+### View (Membuat View)
 
 #### Langkah Langkah Praktikum
 
-c.  <img src = "public/screenshot/14.png"> 
+c. <img src = "public/screenshot/14.png">
 
-###  View dalam direktori
-
-#### Langkah Langkah Praktikum
-
-c.  <img src = "public/screenshot/14.png"> 
-
-###  Menampilkan View dari Controller 
+### View dalam direktori
 
 #### Langkah Langkah Praktikum
 
-c.  <img src = "public/screenshot/14.png"> 
+c. <img src = "public/screenshot/14.png">
 
-
-###  Meneruskan data ke View
+### Menampilkan View dari Controller
 
 #### Langkah Langkah Praktikum
 
-c.  <img src = "public/screenshot/15.png"> 
+c. <img src = "public/screenshot/14.png">
 
+### Meneruskan data ke View
+
+#### Langkah Langkah Praktikum
+
+c. <img src = "public/screenshot/15.png">
 
 ### Soal Praktikum
 
- Untuk File nya berada didalam direktori PWL_2024/POS <br>
-3. a. Halaman Home <br>
-       <img src = "public/screenshot/19.png"> <br>
-   b. Halaman Products <br>
-       <img src = "public/screenshot/18.png"> <br>
-   c. Halaman User <br>
-       <img src = "public/screenshot/16.png"> <br>
-   d. Halaman Penjualan <br>
-       <img src = "public/screenshot/17.png"> 
+Untuk File nya berada didalam direktori PWL_2024/POS <br> 3. a. Halaman Home <br>
+<img src = "public/screenshot/19.png"> <br>
+b. Halaman Products <br>
+<img src = "public/screenshot/18.png"> <br>
+c. Halaman User <br>
+<img src = "public/screenshot/16.png"> <br>
+d. Halaman Penjualan <br>
+<img src = "public/screenshot/17.png">
 
     Isi dari halamannya kosong karena pada directory view nya tidak ada datanya maka tidak ada data yang ditampilkan.
-4. Kodingan Route <br>
-    Route::get('/', [HomeController::class, 'index']);
 
-    Route::prefix('category')->group(function ()  {<br>
-        Route::get('/food-beverage', [ProductController::class, 'foodBeverage']);
-        Route::get('/beauty-health', [ProductController::class, 'beautyHealth']);
-        Route::get('/home-care', [ProductController::class, 'homeCare']);
-        Route::get('/baby-kid', [ProductController::class, 'babyKid']); <br>
+4. Kodingan Route <br>
+   Route::get('/', [HomeController::class, 'index']);
+
+    Route::prefix('category')->group(function () {<br>
+    Route::get('/food-beverage', [ProductController::class, 'foodBeverage']);
+    Route::get('/beauty-health', [ProductController::class, 'beautyHealth']);
+    Route::get('/home-care', [ProductController::class, 'homeCare']);
+    Route::get('/baby-kid', [ProductController::class, 'babyKid']); <br>
     });
 
     Route::get('/user/{id}/name/{name}', [UserController::class, 'show']);
@@ -144,13 +138,13 @@ c.  <img src = "public/screenshot/15.png">
     Route::get('/sales', [SaleController::class, 'index']);
 
 5. Kodingan Fungsi <br>
-    class HomeController extends Controller <br>
-    {
-    public function index()
-    {
-    return view('home');
-    }
-    }
+   class HomeController extends Controller <br>
+   {
+   public function index()
+   {
+   return view('home');
+   }
+   }
 
     class ProductController extends Controller <br>
     {
@@ -162,7 +156,7 @@ c.  <img src = "public/screenshot/15.png">
     public function homeCare()
     {
     return view('products.index');
-    }       
+    }
 
     public function babyKid()
     {
@@ -184,12 +178,8 @@ c.  <img src = "public/screenshot/15.png">
 
     class UserController extends Controller <br>
     {
-  public function show($id, $name)
+    public function show($id, $name)
     {
     return view('user', compact('id', 'name'));
     }  
-    }
-
-
-
-
+     }
