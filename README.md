@@ -39,7 +39,7 @@ echo "Halaman Artikel dengan ID $id";
 
 #### Langkah Langkah Praktikum
 
-b. <br> <img src = "public/screenshot/9.png"> <br>
+b. <img src = "public/screenshot/9.png"> <br>
 c. <img src = "public/screenshot/10.png"> <br>
 e. <img src = "public/screenshot/11.png">
 
