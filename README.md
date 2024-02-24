@@ -2,7 +2,7 @@
 
 NIM : 2241720033 <br>
 Nama : Mochammad Cholilur Rokhman <br>
-Kelas : TI-1D
+Kelas : TI-2F
 
 ### BASIC ROUTING
 
@@ -87,3 +87,109 @@ g.  Routing nya <br>
 #### Langkah Langkah Praktikum
 
  <img src = "public/screenshot/13.png"> 
+
+
+
+###  View (Membuat View)
+
+#### Langkah Langkah Praktikum
+
+c.  <img src = "public/screenshot/14.png"> 
+
+###  View dalam direktori
+
+#### Langkah Langkah Praktikum
+
+c.  <img src = "public/screenshot/14.png"> 
+
+###  Menampilkan View dari Controller 
+
+#### Langkah Langkah Praktikum
+
+c.  <img src = "public/screenshot/14.png"> 
+
+
+###  Meneruskan data ke View
+
+#### Langkah Langkah Praktikum
+
+c.  <img src = "public/screenshot/15.png"> 
+
+
+### Soal Praktikum
+
+ Untuk File nya berada didalam direktori PWL_2024/POS <br>
+3. a. Halaman Home <br>
+       <img src = "public/screenshot/19.png"> 
+   b. Halaman Products <br>
+       <img src = "public/screenshot/18.png"> 
+   c. Halaman User <br>
+       <img src = "public/screenshot/16.png"> 
+   d. Halaman Penjualan <br>
+       <img src = "public/screenshot/17.png"> 
+
+    Isi dari halamannya kosong karena pada directory view nya tidak ada datanya maka tidak ada data yang ditampilkan.
+4. Kodingan Route <br>
+    Route::get('/', [HomeController::class, 'index']);
+
+    Route::prefix('category')->group(function ()  {<br>
+        Route::get('/food-beverage', [ProductController::class, 'foodBeverage']);
+        Route::get('/beauty-health', [ProductController::class, 'beautyHealth']);
+        Route::get('/home-care', [ProductController::class, 'homeCare']);
+        Route::get('/baby-kid', [ProductController::class, 'babyKid']); <br>
+    });
+
+    Route::get('/user/{id}/name/{name}', [UserController::class, 'show']);
+
+    Route::get('/sales', [SaleController::class, 'index']);
+
+5. Kodingan Fungsi <br>
+    class HomeController extends Controller <br>
+    {
+    public function index()
+    {
+    return view('home');
+    }
+    }
+
+    class ProductController extends Controller <br>
+    {
+    public function beautyHealth()
+    {
+    return view('products.index');
+    }
+
+    public function homeCare()
+    {
+    return view('products.index');
+    }       
+
+    public function babyKid()
+    {
+    return view('products.index');
+    }
+    public function foodBeverage()
+    {
+    return view('products.index');
+    }
+    }
+
+    class SaleController extends Controller <br>
+    {
+    public function index()
+    {
+    return view('sale');
+    }
+    }
+
+    class UserController extends Controller <br>
+    {
+  public function show($id, $name)
+    {
+    return view('user', compact('id', 'name'));
+    }  
+    }
+
+
+
+
