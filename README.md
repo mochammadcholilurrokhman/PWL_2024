@@ -30,9 +30,11 @@ c. <img src = "public/screenshot/6.png">
 
 e. <img src = "public/screenshot/7.png">
 
-f. Route::get('/articles{id}', function ($id) {
-echo "Halaman Artikel dengan ID $id";
-}); <br>
+f. 
+
+    Route::get('/articles{id}', function ($id) {
+    echo "Halaman Artikel dengan ID $id";
+    }); <br>
 <img src = "public/screenshot/8.png">
 
 ### Operational Parameters
@@ -48,12 +50,15 @@ e. <img src = "public/screenshot/11.png">
 #### Langkah Langkah Praktikum
 
 e. <img src = "public/screenshot/12.png"> <br>
-f. class PageController extends Controller
-{
-public function index ()
-{
-return 'Selamat Datang';
-}
+
+f. 
+
+    class PageController extends Controller
+    {
+    public function index ()
+    {
+    return 'Selamat Datang';
+    }
 
     public function about()
     {
@@ -68,17 +73,19 @@ return 'Selamat Datang';
         return 'Halaman Artikel dengan Id ' . $id;
     }
 
-};
+    };
 
     Untuk Routingnya
+    
     Route::get('/', [PageController::class, 'index']);
     Route::get('/about', [PageController::class, 'about']);
     Route::get('/articles{id}', [PageController::class, 'articles']);
 
 g. Routing nya <br>
-Route::get('/', [HomeController::class, "index"]); <br>
-Route::get('/about', [AboutController::class, 'About']); <br>
-Route::get('/articles{id}', [ArticleController::class, 'articles']);
+
+    Route::get('/', [HomeController::class, "index"]); <br>
+    Route::get('/about', [AboutController::class, 'About']); <br>
+    Route::get('/articles{id}', [ArticleController::class, 'articles']);
 
 ### Resource Controller
 
@@ -112,7 +119,9 @@ c. <img src = "public/screenshot/15.png">
 
 ### Soal Praktikum
 
-Untuk File nya berada didalam direktori PWL_2024/POS <br> 3. a. Halaman Home <br>
+Untuk File nya berada didalam direktori PWL_2024/POS <br>
+3. 
+a. Halaman Home <br>
 <img src = "public/screenshot/19.png"> <br>
 b. Halaman Products <br>
 <img src = "public/screenshot/18.png"> <br>
@@ -123,63 +132,65 @@ d. Halaman Penjualan <br>
 
     Isi dari halamannya kosong karena pada directory view nya tidak ada datanya maka tidak ada data yang ditampilkan.
 
-4. Kodingan Route <br>
-   Route::get('/', [HomeController::class, 'index']);
+4.  Kodingan Routing <br>
 
-    Route::prefix('category')->group(function () {<br>
-    Route::get('/food-beverage', [ProductController::class, 'foodBeverage']);
-    Route::get('/beauty-health', [ProductController::class, 'beautyHealth']);
-    Route::get('/home-care', [ProductController::class, 'homeCare']);
-    Route::get('/baby-kid', [ProductController::class, 'babyKid']); <br>
-    });
+        Route::get('/', [HomeController::class, 'index']);
 
-    Route::get('/user/{id}/name/{name}', [UserController::class, 'show']);
+        Route::prefix('category')->group(function () {<br>
+        Route::get('/food-beverage', [ProductController::class, 'foodBeverage']);
+        Route::get('/beauty-health', [ProductController::class, 'beautyHealth']);
+        Route::get('/home-care', [ProductController::class, 'homeCare']);
+        Route::get('/baby-kid', [ProductController::class, 'babyKid']); <br>
+        });
 
-    Route::get('/sales', [SaleController::class, 'index']);
+        Route::get('/user/{id}/name/{name}', [UserController::class, 'show']);
 
-5. Kodingan Fungsi <br>
-   class HomeController extends Controller <br>
-   {
-   public function index()
-   {
-   return view('home');
-   }
-   }
+        Route::get('/sales', [SaleController::class, 'index']);
 
-    class ProductController extends Controller <br>
-    {
-    public function beautyHealth()
-    {
-    return view('products.index');
-    }
+5.  Kodingan Fungsi <br>
 
-    public function homeCare()
-    {
-    return view('products.index');
-    }
+            class HomeController extends Controller <br>
+            {
+            public function index()
+            {
+            return view('home');
+            }
+            }
 
-    public function babyKid()
-    {
-    return view('products.index');
-    }
-    public function foodBeverage()
-    {
-    return view('products.index');
-    }
-    }
+            class ProductController extends Controller <br>
+            {
+            public function beautyHealth()
+            {
+            return view('products.index');
+            }
 
-    class SaleController extends Controller <br>
-    {
-    public function index()
-    {
-    return view('sale');
-    }
-    }
+            public function homeCare()
+            {
+            return view('products.index');
+            }
 
-    class UserController extends Controller <br>
-    {
-    public function show($id, $name)
-    {
-    return view('user', compact('id', 'name'));
-    }  
-     }
+            public function babyKid()
+            {
+            return view('products.index');
+            }
+            public function foodBeverage()
+            {
+            return view('products.index');
+            }
+            }
+
+            class SaleController extends Controller <br>
+            {
+            public function index()
+            {
+            return view('sale');
+            }
+            }
+
+            class UserController extends Controller <br>
+            {
+            public function show($id, $name)
+            {
+            return view('user', compact('id', 'name'));
+            }  
+            }
