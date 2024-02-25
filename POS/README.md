@@ -1,6 +1,5 @@
 ### Soal Praktikum
 
-Untuk File nya berada didalam direktori PWL_2024/POS <br>
 3. 
 a. Halaman Home <br>
 <img src = "../public/screenshot/19.png"> <br>
